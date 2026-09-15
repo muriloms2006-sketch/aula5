@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.widget.Adapter;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         );
         lv.setAdapter(adapter);
         lv.setOnItemLongClickListener((parent, view, position, id) -> {
-
+            Toast.makeText(this, nomes[position], Toast.LENGTH_LONG).show();
         });
     }
 }
