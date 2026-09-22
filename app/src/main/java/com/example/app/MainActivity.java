@@ -14,7 +14,6 @@ import androidx.core.view.WindowInsetsCompat;
 
 public class MainActivity extends AppCompatActivity {
 
-
     String[] nomes =new String[]{"Helena", "Livia", "Gabi 2026", "Pedro", "Romulo 2006", "Gabriel"};
     ListView lv;
     @Override
@@ -28,14 +27,12 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
         lv=findViewById(R.id.ListView);
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
+        AdpaterNomes adapter = new AdpaterNomes(this,
                 R.layout.item_lista,
-                R.id.tvnome,
-                nomes
-        );
+                R.id.edNome,
+                nomes);
+
         lv.setAdapter(adapter);
-        lv.setOnItemLongClickListener((parent, view, position, id) -> {
-            Toast.makeText(this, nomes[position], Toast.LENGTH_LONG).show();
-        });
+
     }
 }
